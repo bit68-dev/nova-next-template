@@ -1,3 +1,5 @@
+"use client";
+
 import useAutoCompleteTranslation from "@/hooks/useAutoCompleteTranslation";
 import { Text } from "../Text";
 import styles from "./styles.module.scss";
