@@ -1,0 +1,138 @@
+/* Frame 1171275989 outer — 1442×1076, padding 100, gap 52, vertical */
+.section {
+  position: relative;
+  width: 100%;
+  padding: 100px 100px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 52px;
+  background: var(--color-oz-page-bg);
+
+  @media (max-width: 1024px) {
+    padding: 64px 32px 0;
+    gap: 40px;
+  }
+}
+
+/* Frame 2085663639 — 1242×564, horizontal, gap 42 */
+.row {
+  display: flex;
+  gap: 42px;
+  align-items: center;
+  width: 100%;
+  max-width: 1242px;
+  margin: 0 auto;
+
+  @media (max-width: 1024px) {
+    flex-direction: column;
+    gap: 32px;
+  }
+}
+
+/* LEFT — Frame 1171275874 — 588×468, vertical, gap 24 */
+.left {
+  flex: 0 0 588px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  @media (max-width: 1024px) {
+    flex: 1;
+    width: 100%;
+  }
+}
+
+.heading {
+  font-family: var(--font-sans);
+  font-size: 84px;
+  font-weight: 500;
+  line-height: 98px;
+  color: var(--color-oz-text-dark);
+  margin: 0;
+  letter-spacing: -1px;
+
+  @media (max-width: 1280px) {
+    font-size: 64px;
+    line-height: 1.15;
+  }
+
+  @media (max-width: 1024px) {
+    font-size: 48px;
+    line-height: 1.15;
+  }
+
+  @media (max-width: 640px) {
+    font-size: 36px;
+  }
+}
+
+.paragraph {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 28px;
+  color: var(--color-oz-text-body);
+  margin: 0;
+}
+
+/* RIGHT — Frame 1171275989 inner — 612×564 */
+.right {
+  flex: 0 0 612px;
+  position: relative;
+  height: 564px;
+
+  @media (max-width: 1024px) {
+    flex: 1;
+    width: 100%;
+    max-width: 612px;
+    height: auto;
+    aspect-ratio: 612 / 564;
+  }
+}
+
+/* Vector 42 — decorative shape 499×468, behind image, offset (58, 49) */
+.vectorBg {
+  position: absolute;
+  top: 49px;
+  left: 58px;
+  width: 499px;
+  height: 468px;
+  color: var(--color-oz-card-blue);
+  pointer-events: none;
+
+  @media (max-width: 1024px) {
+    width: 80%;
+    height: 80%;
+    top: 8%;
+    left: 8%;
+  }
+}
+
+/* Frame 1171275902 — 508×509 r:33.5 tint #f2f5d4 — image card, offset (48, 55) */
+.imageCard {
+  position: absolute;
+  top: 55px;
+  left: 48px;
+  width: 508px;
+  height: 509px;
+  background: var(--color-oz-card-green);
+  border-radius: 33.5px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @media (max-width: 1024px) {
+    width: 84%;
+    height: 84%;
+    top: 4%;
+    left: 4%;
+    border-radius: 24px;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}

@@ -1,0 +1,383 @@
+/* Frame 2085663588 — 1442×1083, padding 30 / 100 / 0 / 100, gap 42, vertical */
+.section {
+  position: relative;
+  width: 100%;
+  background: var(--color-oz-page-bg);
+  padding: 30px 100px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 42px;
+  overflow: visible;
+
+  @media (max-width: 1024px) {
+    padding: 24px 32px 0;
+    gap: 32px;
+  }
+}
+
+/* Hero text block — Frame 2085663587 — 1242×447 */
+.hero {
+  position: relative;
+  width: 100%;
+  max-width: 1242px;
+  margin: 0 auto;
+  padding-top: 84px; /* leave space for Navbar */
+}
+
+.heroInner {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  position: relative;
+}
+
+/* Three lines: 120px/700 lh=140.625 color #272a2a */
+.line {
+  font-family: var(--font-sans);
+  font-size: 120px;
+  font-weight: 700;
+  line-height: 140.625px;
+  color: var(--color-oz-text-dark);
+  margin: 0;
+  letter-spacing: -2px;
+
+  @media (max-width: 1280px) {
+    font-size: 96px;
+    line-height: 1.1;
+  }
+
+  @media (max-width: 1024px) {
+    font-size: 64px;
+    line-height: 1.1;
+  }
+
+  @media (max-width: 640px) {
+    font-size: 44px;
+    line-height: 1.1;
+  }
+}
+
+.middleRow {
+  display: inline-flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* Toggle pill — 152×65 r:52 bg #becb2a — decorative, "ON" state */
+.toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 152px;
+  height: 65px;
+  background: var(--color-oz-yellow);
+  border-radius: 52px;
+  padding: 6.5px;
+  flex-shrink: 0;
+  vertical-align: middle;
+
+  @media (max-width: 1024px) {
+    width: 96px;
+    height: 42px;
+    border-radius: 32px;
+    padding: 4px;
+  }
+
+  @media (max-width: 640px) {
+    width: 64px;
+    height: 30px;
+    padding: 3px;
+  }
+}
+
+.toggleKnob {
+  width: 52px;
+  height: 52px;
+  background: #f6f6f6;
+  border-radius: 50%;
+
+  @media (max-width: 1024px) {
+    width: 34px;
+    height: 34px;
+  }
+
+  @media (max-width: 640px) {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+/* Decorative ellipse 110×110 #d3a5e5 — placed near top-right of "ecosystem" line */
+.lavenderEllipse {
+  position: absolute;
+  top: 198px;
+  left: 975px;
+  width: 110px;
+  height: 110px;
+  background: #d3a5e5;
+  border-radius: 50%;
+  pointer-events: none;
+
+  @media (max-width: 1280px) {
+    top: 160px;
+    left: 760px;
+    width: 88px;
+    height: 88px;
+  }
+
+  @media (max-width: 1024px) {
+    display: none;
+  }
+}
+
+/* 8-point cross star — Frame 2140 — 126×126 with stacked blue rectangles */
+.crossStar {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 126px;
+  height: 126px;
+  pointer-events: none;
+
+  @media (max-width: 1280px) {
+    width: 96px;
+    height: 96px;
+  }
+
+  @media (max-width: 1024px) {
+    width: 64px;
+    height: 64px;
+  }
+}
+
+/* Arrow 10 — 38×38 bottom-left */
+.arrow {
+  position: absolute;
+  bottom: -20px;
+  left: 185px;
+  width: 38px;
+  height: 38px;
+  color: #4ecdc4;
+  pointer-events: none;
+
+  @media (max-width: 1024px) {
+    bottom: -20px;
+    left: 32px;
+    width: 28px;
+    height: 28px;
+  }
+}
+
+/* ====================
+   Orbital Diagram — Frame 2085663577 — 1242×564
+   ==================== */
+.diagram {
+  position: relative;
+  width: 100%;
+  max-width: 1242px;
+  height: 564px;
+  margin: 0 auto;
+
+  @media (max-width: 1280px) {
+    height: 480px;
+  }
+
+  @media (max-width: 1024px) {
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+  }
+}
+
+/* Connector SVG layer — Frame 1171276378 — 1011×391 at offset (114,73) */
+.connectors {
+  position: absolute;
+  top: 73px;
+  left: 114px;
+  width: 1011px;
+  height: 391px;
+  pointer-events: none;
+  overflow: visible;
+
+  @media (max-width: 1024px) {
+    display: none;
+  }
+}
+
+/* Node base — absolutely positioned inside .diagram */
+.node {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+
+  @media (max-width: 1024px) {
+    position: static;
+  }
+}
+
+.nodeRing {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.nodeImage {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: #d9d9d9;
+  object-fit: cover;
+}
+
+.nodeLabel {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 28px;
+  color: var(--color-oz-text-dark);
+  white-space: nowrap;
+}
+
+/* --- Node-specific sizes & positions per Figma offsets --- */
+
+/* Integrate — 146×146 r:73 #b0e8db @ (248, 0) */
+.integrate {
+  top: 0;
+  left: 248px;
+  @media (max-width: 1024px) { top: auto; left: auto; }
+
+  .nodeRing {
+    width: 146px;
+    height: 146px;
+    background: #b0e8db;
+    border-radius: 50%;
+    padding: 8px;
+  }
+}
+
+/* Expand — 146×146 r:73 #f07ca3 @ (872, 0) */
+.expand {
+  top: 0;
+  left: 872px;
+  @media (max-width: 1024px) { top: auto; left: auto; }
+
+  .nodeRing {
+    width: 146px;
+    height: 146px;
+    background: #f07ca3;
+    border-radius: 50%;
+    padding: 8px;
+  }
+}
+
+/* Create — 190×190 r:94 #becb2a @ (0, 138) */
+.create {
+  top: 138px;
+  left: 0;
+  @media (max-width: 1024px) { top: auto; left: auto; }
+
+  .nodeRing {
+    width: 190px;
+    height: 190px;
+    background: var(--color-oz-yellow);
+    border-radius: 50%;
+    padding: 12px;
+  }
+}
+
+/* Nourish — 230×230 r:115 #d3a5e5 (CENTER) @ (506, 92) */
+.nourish {
+  top: 92px;
+  left: 506px;
+  @media (max-width: 1024px) { top: auto; left: auto; }
+
+  .nodeRing {
+    width: 230px;
+    height: 230px;
+    background: #d3a5e5;
+    border-radius: 50%;
+    padding: 17.55px;
+    border: 4px dashed rgba(255, 255, 255, 0.6);
+  }
+}
+
+/* Develop — 190×190 r:94 SOLID #0047bb CTA @ (1050, 148) */
+.develop {
+  top: 148px;
+  left: 1050px;
+  @media (max-width: 1024px) { top: auto; left: auto; }
+
+  .nodeRing {
+    width: 190px;
+    height: 190px;
+    background: var(--color-oz-blue);
+    border-radius: 50%;
+    padding: 12px;
+  }
+}
+
+.developInner {
+  width: 169px;
+  height: 169px;
+  background: var(--color-oz-blue);
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 45px 9px 44px;
+  cursor: pointer;
+  transition: background 0.18s ease;
+
+  &:hover {
+    background: #003494;
+  }
+}
+
+.developText {
+  font-family: var(--font-sans);
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 32px;
+  color: #fcfcfc;
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* Flourish — 126×126 r:62 #f07ca3 @ (257, 399) */
+.flourish {
+  top: 399px;
+  left: 257px;
+  @media (max-width: 1024px) { top: auto; left: auto; }
+
+  .nodeRing {
+    width: 126px;
+    height: 126px;
+    background: #f07ca3;
+    border-radius: 50%;
+    padding: 8px;
+  }
+}
+
+/* Grow — 126×126 r:62 #b0e8db @ (889, 399) */
+.grow {
+  top: 399px;
+  left: 889px;
+  @media (max-width: 1024px) { top: auto; left: auto; }
+
+  .nodeRing {
+    width: 126px;
+    height: 126px;
+    background: #b0e8db;
+    border-radius: 50%;
+    padding: 8px;
+  }
+}
