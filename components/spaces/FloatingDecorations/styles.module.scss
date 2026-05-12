@@ -1,0 +1,140 @@
+/* Floating decorative shapes positioned absolutely against page wrapper.
+   All positions derived from Figma absolute X/Y minus main frame origin
+   (Frame 1171275998 starts at x=6365, y=1248). */
+
+.wrapper {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Cross-star (8-point) built from 6 rectangles, scaled by container size.
+   Approximates Figma Frame 2139 6-rect cross shape. */
+.crossStar {
+  position: absolute;
+  display: grid;
+  place-items: center;
+
+  &::before,
+  &::after,
+  > span {
+    content: "";
+    position: absolute;
+    background: var(--color-oz-blue);
+    border-radius: 4px;
+  }
+
+  /* horizontal bar */
+  &::before {
+    width: 90%;
+    height: 18%;
+  }
+  /* vertical bar */
+  &::after {
+    width: 18%;
+    height: 90%;
+  }
+
+  > span {
+    width: 60%;
+    height: 60%;
+
+    /* diagonal-1 */
+    &:nth-child(1) {
+      transform: rotate(45deg);
+      background: var(--color-oz-blue);
+      width: 80%;
+      height: 12%;
+    }
+    &:nth-child(2) {
+      transform: rotate(-45deg);
+      background: var(--color-oz-blue);
+      width: 80%;
+      height: 12%;
+    }
+  }
+}
+
+.crossStarBig {
+  top: 280px;
+  left: 80px;
+  width: 219px;
+  height: 219px;
+}
+
+.crossStarSmall {
+  top: 4280px;
+  left: 1240px;
+  width: 126px;
+  height: 126px;
+}
+
+/* Lavender ellipses */
+.ellipse {
+  position: absolute;
+  background: var(--color-oz-purple);
+  border-radius: 50%;
+}
+
+.ellipseA {
+  top: 360px;
+  right: 100px;
+  width: 110px;
+  height: 110px;
+  transform: rotate(73deg);
+}
+
+.ellipseB {
+  top: 3520px;
+  left: 60px;
+  width: 115px;
+  height: 115px;
+}
+
+/* Yellow-green vector arrow approximated as a small rounded chevron */
+.yellowArrow {
+  position: absolute;
+  width: 114px;
+  height: 140px;
+  color: var(--color-oz-yellow);
+
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.yellowArrowA {
+  top: 980px;
+  right: 110px;
+}
+
+.yellowArrowB {
+  top: 5160px;
+  left: 70px;
+  width: 97px;
+  height: 139px;
+}
+
+/* Teal arrow */
+.tealArrow {
+  position: absolute;
+  top: 5780px;
+  right: 220px;
+  width: 69px;
+  height: 44px;
+  color: #2fb6a1;
+
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+/* Hide all decorations on small screens to avoid clutter */
+@media (max-width: 1024px) {
+  .wrapper {
+    display: none;
+  }
+}

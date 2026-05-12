@@ -10,7 +10,7 @@ import styles from "./styles.module.scss";
 const NAV_LINKS = [
   { label: "Oz A", href: "/oz-a" },
   { label: "The Ecosystem", href: "/ecosystem" },
-  { label: "Spaces & Access", href: "#spaces" },
+  { label: "Spaces & Access", href: "/spaces-access" },
   { label: "Life Inside", href: "#life" },
   { label: "Insights", href: "#insights" },
   { label: "Visits", href: "#visits" },
