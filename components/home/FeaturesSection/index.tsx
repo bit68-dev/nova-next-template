@@ -1,44 +1,49 @@
-import { Icon } from "@/components/ui/Icon";
-import { Text } from "@/components/ui/Text";
-import type { FeatureCard } from "@/app/home/data";
-import type { IconName } from "@/components/ui/Icon/types";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 import styles from "./styles.module.scss";
 
-
-interface FeaturesSectionProps {
-  features: FeatureCard[];
-}
-
-export function FeaturesSection({ features }: FeaturesSectionProps) {
+export function FeaturesSection() {
   return (
-    <section className={styles.section} id="services" aria-labelledby="features-title">
-      <div className={styles.inner}>
-        <div className={styles.sectionHeader}>
-          <Text variant="L1" className={styles.sectionLabel} skipTranslate>
-            What We Offer
-          </Text>
-          <Text variant="H2" className={styles.sectionTitle} skipTranslate id="features-title">
-            Everything You Need to Succeed
-          </Text>
-          <Text variant="P1" className={styles.sectionSubtitle} skipTranslate>
-            A comprehensive suite of tools and services built for modern businesses ready to scale.
-          </Text>
+    <section className={styles.section} id="oz-a" aria-labelledby="space-title">
+      <div className={styles.container}>
+        {/* Left: text content */}
+        <div className={styles.textCol}>
+          <h2 className={styles.heading} id="space-title">
+            The Space Between Work and Life
+          </h2>
+          <p className={styles.body}>
+            Designed as an integrated ecosystem, OZ A connects people and ideas. From the quiet focus of our
+            workspaces to the vibrant energy of our fitness and dining spaces, every corner is crafted for you.
+          </p>
+          <div className={styles.actions}>
+            <Link href="#" className={styles.btnPrimary}>
+              <ArrowRight size={20} aria-hidden="true" />
+              Explore OZ A
+              <ArrowRight size={20} aria-hidden="true" />
+            </Link>
+            <Link href="#visits" className={styles.btnSecondary}>
+              <ArrowRight size={20} aria-hidden="true" />
+              Visit Us
+              <ArrowRight size={20} aria-hidden="true" />
+            </Link>
+          </div>
         </div>
 
-        <div className={styles.grid}>
-          {features.map((feature) => (
-            <article key={feature.title} className={styles.card}>
-              <div className={styles.iconWrapper} aria-hidden="true">
-                <Icon name={feature.icon as IconName} size={24} color="var(--color-oz-blue)" />
-              </div>
-              <Text variant="H6" className={styles.cardTitle} skipTranslate>
-                {feature.title}
-              </Text>
-              <Text variant="P2" className={styles.cardDescription} skipTranslate>
-                {feature.description}
-              </Text>
-            </article>
-          ))}
+        {/* Right: membership cards */}
+        <div className={styles.cards}>
+          <div className={styles.cardBlue} aria-label="Blue membership card">
+            <div className={styles.cardPin}>
+              <div className={styles.pinShape} style={{ background: "#a0bbeb" }} />
+            </div>
+            <div className={styles.cardImage} style={{ background: "#e4edff" }} />
+          </div>
+
+          <div className={styles.cardGreen} aria-label="Green membership card">
+            <div className={styles.cardPin}>
+              <div className={styles.pinShape} style={{ background: "#c5d14a" }} />
+            </div>
+            <div className={styles.cardImage} style={{ background: "#f2f5d4" }} />
+          </div>
         </div>
       </div>
     </section>

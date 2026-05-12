@@ -2,25 +2,23 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #fcfcfc;
+  --foreground: #272a2a;
 
-  /* OZ Brand Colors */
+  /* OZ Brand Colors — from Figma */
   --color-oz-blue: #0047bb;
-  --color-oz-blue-dark: #003494;
-  --color-oz-blue-light: #1a5fcc;
-  --color-oz-white: #ffffff;
-  --color-oz-neutral-50: #f8faff;
-  --color-oz-neutral-100: #eef2fb;
-  --color-oz-neutral-600: #52525b;
-  --color-oz-neutral-800: #1e2a4a;
-  --color-oz-neutral-900: #0d1829;
+  --color-oz-yellow: #becb2a;
+  --color-oz-page-bg: #fcfcfc;
+  --color-oz-text-dark: #272a2a;
+  --color-oz-text-body: #5a6161;
+  --color-oz-card-blue: #e4edff;
+  --color-oz-card-green: #f2f5d4;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+  --font-sans: var(--font-roboto), Roboto, sans-serif;
   --font-mono: var(--font-geist-mono);
 
   /* Global Colors */
@@ -32,15 +30,7 @@
   --color-success-500: var(--color-success-500);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
 }

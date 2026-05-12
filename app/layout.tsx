@@ -1,22 +1,18 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Roboto } from "next/font/google";
 import { I18nProvider } from "@/components/providers/I18nProvider";
 import "./globals.scss";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const roboto = Roboto({
+  variable: "--font-roboto",
   subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+  weight: ["400", "500", "700"],
 });
 
 export const metadata: Metadata = {
-  title: "OZ — Powering the Future of Digital Solutions",
+  title: "OZ Coworking Park — Work With Energy",
   description:
-    "OZ delivers cutting-edge technology solutions that help businesses scale, innovate, and thrive in an ever-changing digital landscape.",
+    "OZ is a holistic coworking ecosystem where productivity meets life. Workspaces, fitness, dining, and community — all in one vibrant park.",
 };
 
 export default function RootLayout({
@@ -27,7 +23,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased bg-background`}
+      className={`${roboto.variable} h-full antialiased bg-background`}
     >
       <body className="min-h-full flex flex-col">
         <I18nProvider>{children}</I18nProvider>
