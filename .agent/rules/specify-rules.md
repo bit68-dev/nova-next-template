@@ -1,4 +1,4 @@
-﻿# autopilot-refactor Development Guidelines
+# autopilot-refactor Development Guidelines
 
 Auto-generated from all feature plans. Last updated: 2026-03-02
 
@@ -40,4 +40,6 @@ TypeScript: Follow standard conventions
 
 
 <!-- MANUAL ADDITIONS START -->
+- TypeScript 5, React 19, Next.js 16 + TailwindCSS v4, SCSS modules, lucide-react, clsx, tailwind-merge (007-oz-homepage)
+- N/A — static marketing page, no persistence (007-oz-homepage)
 <!-- MANUAL ADDITIONS END -->

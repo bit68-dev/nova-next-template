@@ -1,0 +1,55 @@
+@use "@/styles/all" as *;
+
+.section {
+  background-color: var(--color-oz-blue);
+  padding: 80px 32px;
+
+  @media (max-width: 768px) {
+    padding: 56px 20px;
+  }
+}
+
+.inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 40px;
+  flex-wrap: wrap;
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+    gap: 32px;
+  }
+}
+
+.statItem {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+  min-width: 140px;
+}
+
+.statValue {
+  color: var(--color-oz-white) !important;
+  font-weight: 800 !important;
+}
+
+.statLabel {
+  color: rgba(255, 255, 255, 0.75) !important;
+}
+
+.divider {
+  width: 1px;
+  height: 60px;
+  background-color: rgba(255, 255, 255, 0.2);
+  flex-shrink: 0;
+
+  @media (max-width: 600px) {
+    width: 60px;
+    height: 1px;
+  }
+}
