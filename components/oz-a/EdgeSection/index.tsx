@@ -5,22 +5,23 @@ import styles from "./styles.module.scss";
 type EdgeCard = {
   title: string;
   body: string;
-  variant: "blue" | "purple" | "green";
+  variant: "purple" | "blue" | "green";
   imageAlt: string;
 };
 
+/* Figma order (left to right by x position): purple → blue (smaller, higher) → green */
 const CARDS: EdgeCard[] = [
-  {
-    title: "Ritual Over Routine",
-    body: "We replace the monotony of the workday with meaningful communal rituals—shared meals, evening talks, and intentional growth.",
-    variant: "blue",
-    imageAlt: "Communal ritual at OZ",
-  },
   {
     title: "A Unified Ecosystem",
     body: "Through OZ Fit, Deli, and Knowledge, we support the whole human, ensuring your physical, nutritional, and intellectual needs are met in one flow.",
     variant: "purple",
     imageAlt: "OZ ecosystem amenities",
+  },
+  {
+    title: "Ritual Over Routine",
+    body: "We replace the monotony of the workday with meaningful communal rituals—shared meals, evening talks, and intentional growth.",
+    variant: "blue",
+    imageAlt: "Communal ritual at OZ",
   },
   {
     title: "Physical-Digital Synergy",
@@ -31,8 +32,8 @@ const CARDS: EdgeCard[] = [
 ];
 
 const variantClass = {
-  blue: styles.cardBlue,
   purple: styles.cardPurple,
+  blue: styles.cardBlue,
   green: styles.cardGreen,
 };
 
@@ -40,7 +41,7 @@ export function EdgeSection() {
   return (
     <section className={styles.section} aria-labelledby="oz-edge-title">
       <div className={styles.inner}>
-        {/* Heading */}
+        {/* Heading — Frame 1171275812 */}
         <div className={styles.heading}>
           <h2 id="oz-edge-title" className={styles.title}>
             The OZ Edge
@@ -51,7 +52,7 @@ export function EdgeSection() {
           </p>
         </div>
 
-        {/* 3 differentiator cards */}
+        {/* Cards — Frame 1171275877 (1235x703) */}
         <div className={styles.cards}>
           {CARDS.map((card) => (
             <article
@@ -60,7 +61,7 @@ export function EdgeSection() {
             >
               <div className={styles.pinRow}>
                 <span className={styles.pin} aria-hidden="true">
-                  <MapPin size={20} strokeWidth={2} />
+                  <MapPin size={20} strokeWidth={2} color="#ffffff" />
                 </span>
               </div>
 
