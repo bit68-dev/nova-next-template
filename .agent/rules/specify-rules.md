@@ -42,4 +42,6 @@ TypeScript: Follow standard conventions
 <!-- MANUAL ADDITIONS START -->
 - TypeScript 5, React 19, Next.js 16 + TailwindCSS v4, SCSS modules, lucide-react, clsx, tailwind-merge (007-oz-homepage)
 - N/A — static marketing page, no persistence (007-oz-homepage)
+- TypeScript 5, React 19, Next.js 16 + TailwindCSS v4, SCSS modules, lucide-react (Star/MapPin/Globe), clsx, tailwind-merge, next/navigation usePathname for Navbar active state (008-oz-a-page)
+- N/A — static marketing page, no persistence (008-oz-a-page)
 <!-- MANUAL ADDITIONS END -->

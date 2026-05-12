@@ -1,0 +1,189 @@
+/* Figma: Frame 1171275878 — 1435×1093 padding:100 gap:12 VERTICAL */
+.section {
+  width: 100%;
+  background: var(--color-oz-page-bg);
+  padding: 100px;
+
+  @media (max-width: 1024px) {
+    padding: 60px 24px;
+  }
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  gap: 56px;
+  max-width: 1235px;
+  margin: 0 auto;
+}
+
+/* Heading block — Frame 1171275812 — 805×178 gap:24 */
+.heading {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 805px;
+}
+
+.title {
+  font-size: 84px;
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -1.5px;
+  color: var(--color-oz-text-dark);
+  margin: 0;
+
+  @media (max-width: 1024px) {
+    font-size: 56px;
+    letter-spacing: -1px;
+  }
+
+  @media (max-width: 640px) {
+    font-size: 40px;
+  }
+}
+
+.body {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 28px;
+  color: var(--color-oz-text-body);
+  max-width: 674px;
+  margin: 0;
+}
+
+/* Cards row — Frame 1171275877 — 1235×703 */
+.cards {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+
+  @media (max-width: 1024px) {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 32px;
+  }
+}
+
+/* Base card */
+.card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 32px;
+  padding: 24px;
+  gap: 14px;
+  flex: 1 1 0;
+
+  @media (max-width: 1024px) {
+    flex: 1 1 auto;
+  }
+}
+
+/* Variant 1: blue 326×484 r:24 #e4edff */
+.cardBlue {
+  background: var(--color-oz-card-blue);
+  max-width: 326px;
+  min-height: 484px;
+  border-radius: 24px;
+
+  @media (max-width: 1024px) {
+    max-width: 100%;
+    min-height: 0;
+  }
+
+  .pin {
+    background: var(--color-oz-blue);
+  }
+}
+
+/* Variant 2: purple 440×552 r:32 #eddbf5 */
+.cardPurple {
+  background: var(--color-oz-card-purple);
+  max-width: 440px;
+  min-height: 552px;
+  border-radius: 32px;
+
+  @media (max-width: 1024px) {
+    max-width: 100%;
+    min-height: 0;
+  }
+
+  .pin {
+    background: rgba(220, 163, 233, 1);
+  }
+}
+
+/* Variant 3: green 440×552 r:24 #f2f5d4 */
+.cardGreen {
+  background: var(--color-oz-card-green);
+  max-width: 440px;
+  min-height: 552px;
+  border-radius: 24px;
+
+  @media (max-width: 1024px) {
+    max-width: 100%;
+    min-height: 0;
+  }
+
+  .pin {
+    background: var(--color-oz-yellow);
+  }
+}
+
+/* Pin row — Frame 1171275811 — pin 36-44 px */
+.pinRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.pin {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #ffffff;
+}
+
+/* Nested inner image — Frame 2057 r:16 #f2f5d4 */
+.innerImage {
+  flex: 1 1 auto;
+  background: var(--color-oz-card-green);
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+  min-height: 200px;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+/* Text block — Frame 1171275882 */
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.cardTitle {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 32px;
+  color: var(--color-oz-text-dark);
+  margin: 0;
+}
+
+.cardBody {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 28px;
+  color: var(--color-oz-text-body);
+  margin: 0;
+}

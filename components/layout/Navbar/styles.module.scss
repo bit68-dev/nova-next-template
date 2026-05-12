@@ -1,9 +1,53 @@
+/* Dark variant — sits on blue Hero (homepage) */
 .header {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   z-index: 50;
+}
+
+/* Light variant — sits on white page (OZ A and other inner pages) */
+.headerLight {
+  position: relative;
+  background: #fcfcfc;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+
+  .logoText {
+    color: #0047bb;
+  }
+
+  .navLink {
+    color: rgba(90, 97, 97, 1);
+
+    &:hover {
+      color: #0047bb;
+    }
+  }
+
+  .navLinkActive {
+    color: #0047bb;
+    font-weight: 500;
+
+    &::after {
+      content: "";
+      display: block;
+      width: 23px;
+      height: 1px;
+      background: #0047bb;
+      margin: 0 auto;
+      margin-top: 2px;
+    }
+  }
+
+  .lang,
+  .langText {
+    color: rgba(39, 42, 42, 1);
+  }
+
+  .menuBtn {
+    color: #0047bb;
+  }
 }
 
 .inner {
@@ -48,10 +92,16 @@
   text-decoration: none;
   padding: 10px 10px;
   white-space: nowrap;
+  transition: color 0.15s ease;
 
   &:hover {
     color: #ffffff;
   }
+}
+
+.navLinkActive {
+  color: #0047bb;
+  font-weight: 500;
 }
 
 /* Language button — Figma: pad 10/10/10/10, gap 10, horizontal layout */
@@ -113,6 +163,11 @@
   text-decoration: none;
   padding: 14px 8px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.drawerLinkActive {
+  font-weight: 500;
+  color: #becb2a;
 }
 
 .drawerLang {

@@ -2,12 +2,13 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Globe, Menu, X } from "lucide-react";
 import { cn } from "@/utils/CN";
 import styles from "./styles.module.scss";
 
 const NAV_LINKS = [
-  { label: "Oz A", href: "#oz-a" },
+  { label: "Oz A", href: "/oz-a" },
   { label: "The Ecosystem", href: "#ecosystem" },
   { label: "Spaces & Access", href: "#spaces" },
   { label: "Life Inside", href: "#life" },
@@ -15,11 +16,17 @@ const NAV_LINKS = [
   { label: "Visits", href: "#visits" },
 ];
 
-export function Navbar() {
+type NavbarVariant = "dark" | "light";
+
+export function Navbar({ variant = "dark" }: { variant?: NavbarVariant }) {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
+
+  const isActive = (href: string) =>
+    href.startsWith("/") && pathname === href;
 
   return (
-    <header className={styles.header}>
+    <header className={cn(styles.header, variant === "light" && styles.headerLight)}>
       <div className={styles.inner}>
         <Link href="/" className={styles.logo} aria-label="OZ home">
           <span className={styles.logoText}>OZ</span>
@@ -27,7 +34,12 @@ export function Navbar() {
 
         <nav className={styles.nav} aria-label="Main navigation">
           {NAV_LINKS.map((link) => (
-            <Link key={link.label} href={link.href} className={styles.navLink}>
+            <Link
+              key={link.label}
+              href={link.href}
+              className={cn(styles.navLink, isActive(link.href) && styles.navLinkActive)}
+              aria-current={isActive(link.href) ? "page" : undefined}
+            >
               {link.label}
             </Link>
           ))}
@@ -35,7 +47,7 @@ export function Navbar() {
 
         <div className={styles.lang}>
           <Globe size={18} aria-hidden="true" />
-          <span>العربية</span>
+          <span className={styles.langText}>العربية</span>
         </div>
 
         <button
@@ -54,7 +66,7 @@ export function Navbar() {
             <Link
               key={link.label}
               href={link.href}
-              className={styles.drawerLink}
+              className={cn(styles.drawerLink, isActive(link.href) && styles.drawerLinkActive)}
               onClick={() => setOpen(false)}
             >
               {link.label}
