@@ -1,52 +1,63 @@
-import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Navbar } from "@/components/layout/Navbar";
 import styles from "./styles.module.scss";
 
 export function HeroSection() {
   return (
-    <section className={styles.hero} aria-label="Hero">
-      <Navbar />
-      {/* Wavy subtract shape from Figma */}
-      <div className={styles.waveMask} aria-hidden="true" />
+    <section className={styles.hero} aria-label="Hero — Work With Energy">
+      {/* Figma: "Subtract" vector — white elliptical cutout at bottom */}
+      <div className={styles.subtract} aria-hidden="true" />
 
+      {/* Figma: Container gap:77 */}
       <div className={styles.container}>
-        {/* Title block: Work / With [profiles] / Energy */}
-        <div className={styles.titleBlock}>
-          <div className={styles.topRow}>
-            <h1 className={styles.titleWord}>Work</h1>
-            <h1 className={styles.titleWord}>With</h1>
+        {/* Navbar sits inside container at top */}
+        <Navbar />
 
-            {/* Profile bubbles from Figma */}
-            <div className={styles.profiles} aria-hidden="true">
-              <span className={styles.bubble} style={{ background: "#d9d9d9" }} />
-              <span className={styles.bubble} style={{ background: "#d3a6e5" }} />
-              <span className={styles.bubble} style={{ background: "#bece29" }} />
+        {/* Main content row: title col (w:612) + desc col (w:303) */}
+        <div className={styles.mainRow}>
+          {/* Left: Title block */}
+          <div className={styles.titleCol}>
+            {/* Row 1: "Work" + "With" + profile bubbles — Figma gap:32 */}
+            <div className={styles.titleRow}>
+              <h1 className={styles.word}>Work</h1>
+              <h1 className={styles.word}>With</h1>
+
+              {/* Figma: Ellipse19 (grey 90px) + connector line + profile container
+                  Ellipse20 (purple 71px) + Ellipse21 (yellow 71px) + profile card */}
+              <div className={styles.profiles} aria-hidden="true">
+                <span className={`${styles.bubble}`} />
+                <span className={`${styles.bubble}`} />
+                <span className={`${styles.bubble}`} />
+                <div className={styles.profileCard}>
+                  <div className={styles.profileLine} />
+                  <div className={styles.profileLine} />
+                  <div className={styles.profileLine} />
+                </div>
+              </div>
             </div>
+
+            {/* Row 2: "Energy" */}
+            <h1 className={styles.word}>Energy</h1>
           </div>
 
-          <h1 className={styles.titleWord}>Energy</h1>
-        </div>
-
-        {/* Description + CTA row */}
-        <div className={styles.bottomRow}>
-          <p className={styles.desc}>
-            Your space to create, move, and connect — all in one vibrant ecosystem.
-          </p>
-
-          <div className={styles.ctaGroup}>
-            <Link href="#ecosystem" className={styles.btnPrimary}>
+          {/* Right: description + CTA */}
+          <div className={styles.descCol}>
+            <p className={styles.descText}>
+              Your space to create, move, and connect — all in one vibrant ecosystem.
+            </p>
+            <a href="#" className={styles.btnPrimary}>
               <ArrowRight size={20} aria-hidden="true" />
               Explore OZ
               <ArrowRight size={20} aria-hidden="true" />
-            </Link>
-
-            <Link href="#spaces" className={styles.btnArrow} aria-label="Explore spaces">
-              <ArrowRight size={24} aria-hidden="true" />
-            </Link>
+            </a>
           </div>
         </div>
       </div>
+
+      {/* Figma: "secondray" circle 100x100 #f6f6f6 with arrow-right icon */}
+      <button className={styles.scrollCircle} aria-label="Scroll down">
+        <ArrowRight size={41} color="#0047bb" aria-hidden="true" />
+      </button>
     </section>
   );
 }

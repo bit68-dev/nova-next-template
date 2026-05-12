@@ -1,6 +1,18 @@
+/* Figma: Footer — blue #0047bb, radius:60/60/0/0 at top, pad:60/100 */
 .footer {
   background-color: #0047bb;
-  padding: 64px 16px 32px;
+  border-radius: 60px 60px 0 0;
+  padding: 60px 100px 40px;
+
+  @media (max-width: 1024px) {
+    padding: 60px 40px 32px;
+    border-radius: 40px 40px 0 0;
+  }
+
+  @media (max-width: 600px) {
+    padding: 48px 24px 28px;
+    border-radius: 28px 28px 0 0;
+  }
 }
 
 .container {
@@ -11,7 +23,7 @@
   gap: 48px;
 }
 
-/* Top: 3 columns */
+/* Figma: Frame 1171275846 — 3 column groups, gap between them */
 .top {
   display: flex;
   gap: 64px;
@@ -23,39 +35,38 @@
   }
 }
 
-/* Discover column */
+/* Discover nav col */
 .discoverCol {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 12px;
   min-width: 180px;
 }
 
+/* Figma "Discover" label — white bg, blue text, radius:32 */
 .discoverLabel {
-  font-family: Roboto, sans-serif;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 400;
-  color: rgba(252, 252, 252, 0.6);
-  background: rgba(252, 252, 252, 0.1);
+  line-height: 24px;
+  color: #0047bb;
+  background: #fcfcfc;
   padding: 4px 12px;
-  border-radius: 4px;
+  border-radius: 32px;
   align-self: flex-start;
 }
 
 .discoverLink {
-  font-family: Roboto, sans-serif;
   font-size: 20px;
   font-weight: 500;
+  line-height: 32px;
   color: #fcfcfc;
   text-decoration: none;
   transition: opacity 0.2s;
 
-  &:hover {
-    opacity: 0.7;
-  }
+  &:hover { opacity: 0.7; }
 }
 
-/* Info column */
+/* Info columns */
 .infoCol {
   display: flex;
   gap: 48px;
@@ -70,23 +81,23 @@
   min-width: 180px;
 }
 
+/* "Office" / "Contact Us" labels — same pill style as discoverLabel */
 .infoLabel {
-  font-family: Roboto, sans-serif;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 400;
-  color: rgba(252, 252, 252, 0.6);
-  background: rgba(252, 252, 252, 0.1);
+  line-height: 24px;
+  color: #0047bb;
+  background: #fcfcfc;
   padding: 4px 12px;
-  border-radius: 4px;
+  border-radius: 32px;
   align-self: flex-start;
 }
 
 .infoText {
-  font-family: Roboto, sans-serif;
   font-size: 20px;
   font-weight: 500;
+  line-height: 32px;
   color: #fcfcfc;
-  line-height: 1.5;
   margin: 0;
   max-width: 300px;
 }
@@ -95,29 +106,25 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  font-family: Roboto, sans-serif;
   font-size: 20px;
   font-weight: 500;
+  line-height: 32px;
   color: #fcfcfc;
   text-decoration: none;
   transition: opacity 0.2s;
 
-  &:hover {
-    opacity: 0.7;
-  }
+  &:hover { opacity: 0.7; }
 }
 
 .contactItem {
-  font-family: Roboto, sans-serif;
   font-size: 20px;
   font-weight: 500;
+  line-height: 32px;
   color: #fcfcfc;
   text-decoration: none;
   transition: opacity 0.2s;
 
-  &:hover {
-    opacity: 0.7;
-  }
+  &:hover { opacity: 0.7; }
 }
 
 .social {
@@ -127,9 +134,9 @@
 }
 
 .socialIcon {
-  width: 36px;
-  height: 36px;
-  border-radius: 8px;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
   background: rgba(252, 252, 252, 0.15);
   color: #fcfcfc;
   display: flex;
@@ -138,12 +145,10 @@
   text-decoration: none;
   transition: background 0.2s;
 
-  &:hover {
-    background: rgba(252, 252, 252, 0.25);
-  }
+  &:hover { background: rgba(252, 252, 252, 0.25); }
 }
 
-/* App store column */
+/* App store col */
 .storeCol {
   display: flex;
   flex-direction: column;
@@ -158,37 +163,33 @@
   background: #000000;
   color: #ffffff;
   padding: 10px 20px;
-  border-radius: 10px;
+  border-radius: 12px;
   text-decoration: none;
   min-width: 180px;
   transition: opacity 0.2s;
 
-  &:hover {
-    opacity: 0.85;
-  }
+  &:hover { opacity: 0.85; }
 }
 
 .storeBtnText {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 1px;
 }
 
 .storeBtnSub {
-  font-family: Roboto, sans-serif;
   font-size: 11px;
   font-weight: 400;
   color: #ffffff;
 }
 
 .storeBtnMain {
-  font-family: Roboto, sans-serif;
   font-size: 18px;
   font-weight: 500;
   color: #ffffff;
 }
 
-/* Bottom bar */
+/* Figma: bottom bar — border-top rgba(fcfcfc, 0.15) */
 .bottom {
   display: flex;
   align-items: center;
@@ -211,22 +212,20 @@
 }
 
 .legalLink {
-  font-family: Roboto, sans-serif;
   font-size: 16px;
   font-weight: 400;
+  line-height: 28px;
   color: rgba(252, 252, 252, 0.7);
   text-decoration: none;
   transition: color 0.2s;
 
-  &:hover {
-    color: #fcfcfc;
-  }
+  &:hover { color: #fcfcfc; }
 }
 
 .copyright {
-  font-family: Roboto, sans-serif;
   font-size: 16px;
   font-weight: 400;
+  line-height: 28px;
   color: rgba(252, 252, 252, 0.5);
   margin: 0;
 }

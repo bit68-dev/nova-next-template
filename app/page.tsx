@@ -3,12 +3,13 @@ import { FeaturesSection } from "@/components/home/FeaturesSection";
 import { StatsSection } from "@/components/home/StatsSection";
 import { LandscapeSection } from "@/components/home/LandscapeSection";
 import { LifeSection } from "@/components/home/LifeSection";
+import { InsightsSection } from "@/components/home/InsightsSection";
 import { FooterSection } from "@/components/home/FooterSection";
 
 export default function Home() {
   return (
     <main>
-      {/* Hero (includes sticky Navbar inside blue section) */}
+      {/* Hero (includes Navbar inside blue section) */}
       <HeroSection />
 
       {/* The Space Between Work and Life */}
@@ -22,6 +23,9 @@ export default function Home() {
 
       {/* Life at OZ */}
       <LifeSection />
+
+      {/* Latest Insights */}
+      <InsightsSection />
 
       {/* Footer */}
       <FooterSection />

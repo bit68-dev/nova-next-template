@@ -1,6 +1,15 @@
+/* Frame 1171275853 — pad:100/100/100/100 gap:2 center-aligned */
 .section {
   background-color: #fcfcfc;
-  padding: 80px 16px;
+  padding: 100px;
+
+  @media (max-width: 1024px) {
+    padding: 80px 40px;
+  }
+
+  @media (max-width: 600px) {
+    padding: 60px 20px;
+  }
 }
 
 .container {
@@ -8,91 +17,107 @@
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 48px;
+  align-items: center;
+  gap: 24px;
 }
 
+/* Text block — Figma: Frame 1171275813 w:1242 h:290 gap:24 center */
 .textBlock {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 24px;
-  max-width: 805px;
+  max-width: 798px;
+  width: 100%;
 }
 
+/* Figma: 84px/500 Roboto color #272a2a lh:98 text-align CENTER w:798 */
 .heading {
-  font-family: Roboto, sans-serif;
-  font-size: clamp(42px, 6vw, 84px);
+  font-size: clamp(40px, 6vw, 84px);
   font-weight: 500;
   color: #272a2a;
-  line-height: 1.1;
+  line-height: 98px;
+  text-align: center;
   margin: 0;
+
+  @media (max-width: 768px) {
+    line-height: 1.2;
+  }
 }
 
+/* Figma: 16px/400 color #5a6161 lh:28 text-align CENTER w:674 */
 .body {
-  font-family: Roboto, sans-serif;
   font-size: 16px;
   font-weight: 400;
   color: #5a6161;
-  line-height: 1.6;
-  max-width: 650px;
+  line-height: 28px;
+  text-align: center;
+  max-width: 674px;
   margin: 0;
 }
 
+/* Figma: Frame 1171275843 gap:16 horizontal */
 .actions {
   display: flex;
   align-items: center;
   gap: 16px;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
+/* Primary — #becb2a radius:32 */
 .btnPrimary {
   display: inline-flex;
   align-items: center;
   gap: 8px;
   background-color: #becb2a;
+  border: 1px solid #becb2a;
   color: #0047bb;
-  font-family: Roboto, sans-serif;
   font-size: 16px;
   font-weight: 500;
-  padding: 16px 28px;
-  border-radius: 8px;
+  line-height: 28px;
+  padding: 16px 24px;
+  border-radius: 32px;
   text-decoration: none;
   white-space: nowrap;
   transition: opacity 0.2s;
 
-  &:hover {
-    opacity: 0.9;
-  }
+  &:hover { opacity: 0.9; }
 }
 
+/* Secondary — stroke rgba(211,213,213) radius:32 */
 .btnSecondary {
   display: inline-flex;
   align-items: center;
   gap: 8px;
   background-color: transparent;
-  border: 2px solid #e0e0e0;
+  border: 1px solid rgba(211, 213, 213, 1);
   color: #272a2a;
-  font-family: Roboto, sans-serif;
   font-size: 16px;
   font-weight: 500;
-  padding: 14px 26px;
-  border-radius: 8px;
+  line-height: 28px;
+  padding: 16px 24px;
+  border-radius: 32px;
   text-decoration: none;
   white-space: nowrap;
   transition: border-color 0.2s;
 
-  &:hover {
-    border-color: #c0c0c0;
-  }
+  &:hover { border-color: #9a9a9a; }
 }
 
-/* 4 image cards row */
+/* Figma: Frame 2085663624 — 4 cards space-between, each card is "Component 6/4/7/5"
+   Cards have radius:250 (pill-like), varying widths: 311/277/277/311 h:297/260/260/297 */
 .cards {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
   gap: 20px;
+  width: 100%;
 
   @media (max-width: 900px) {
-    grid-template-columns: repeat(2, 1fr);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
   }
 
   @media (max-width: 480px) {
@@ -100,22 +125,66 @@
   }
 }
 
+/* Each ecosystem card — rounded pill shape with colored fill */
 .card {
-  height: 296px;
-  border-radius: 20px;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
   position: relative;
+  border-radius: 250px;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.cardBadge {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  position: absolute;
-  top: 20px;
-  right: 20px;
+/* Card sizes from Figma: C6=311x297, C4=277x260, C7=277x260, C5=311x297 */
+.card:nth-child(1) { width: 311px; height: 297px; }
+.card:nth-child(2) { width: 277px; height: 260px; }
+.card:nth-child(3) { width: 277px; height: 260px; }
+.card:nth-child(4) { width: 311px; height: 297px; }
+
+@media (max-width: 900px) {
+  .card { width: 100% !important; height: 220px !important; }
 }
+
+/* Colored "Union" blob inside card */
+.cardBlob {
+  position: absolute;
+  inset: 0;
+  border-radius: 250px;
+}
+
+/* Small image strip inside card */
+.cardStrip {
+  position: absolute;
+  bottom: 28%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 65%;
+  height: 18%;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* White tick-circle icon in center */
+.cardTick {
+  position: relative;
+  z-index: 2;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* Corner accent dots — Figma shows small colored circles at corners */
+.cardDot {
+  position: absolute;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+}
+
+.cardDotTl { top: 18px; left: 28px; }
+.cardDotBr { bottom: 18px; right: 28px; }

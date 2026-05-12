@@ -9,32 +9,31 @@
 .inner {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   max-width: 1247px;
   margin: 0 auto;
-  padding: 20px 16px;
+  padding: 0 16px;
   height: 78px;
-  gap: 0;
 }
 
+/* Logo */
 .logo {
   text-decoration: none;
   flex-shrink: 0;
-  margin-right: 40px;
 }
 
 .logoText {
-  font-family: Roboto, sans-serif;
-  font-size: 28px;
+  font-size: 24px;
   font-weight: 700;
   color: #ffffff;
-  letter-spacing: 3px;
+  letter-spacing: 4px;
+  font-family: Roboto, sans-serif;
 }
 
+/* Nav links — Figma: color rgba(90,97,97,1) each link pad 10/10 */
 .nav {
   display: flex;
   align-items: center;
-  gap: 4px;
-  flex: 1;
 
   @media (max-width: 900px) {
     display: none;
@@ -42,41 +41,44 @@
 }
 
 .navLink {
-  font-family: Roboto, sans-serif;
   font-size: 16px;
   font-weight: 400;
-  color: #5a6161;
+  line-height: 28px;
+  color: rgba(90, 97, 97, 1);
   text-decoration: none;
-  padding: 12px 14px;
-  border-radius: 6px;
+  padding: 10px 10px;
   white-space: nowrap;
-  transition: color 0.2s;
 
   &:hover {
     color: #ffffff;
   }
 }
 
+/* Language button — Figma: pad 10/10/10/10, gap 10, horizontal layout */
 .lang {
   display: flex;
   align-items: center;
-  gap: 8px;
-  font-family: Roboto, sans-serif;
-  font-size: 16px;
-  font-weight: 400;
+  gap: 10px;
+  padding: 10px;
   color: #fcfcfc;
   cursor: pointer;
   flex-shrink: 0;
-  margin-left: auto;
 
   @media (max-width: 900px) {
     display: none;
   }
 }
 
+.langText {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 28px;
+  color: #fcfcfc;
+}
+
+/* Mobile hamburger */
 .menuBtn {
   display: none;
-  margin-left: auto;
   background: none;
   border: none;
   color: #ffffff;
@@ -90,12 +92,12 @@
   }
 }
 
+/* Mobile drawer */
 .drawer {
   display: none;
   flex-direction: column;
   background: #0047bb;
   padding: 8px 16px 24px;
-  gap: 2px;
 
   @media (max-width: 900px) {
     &.drawerOpen {
@@ -105,7 +107,6 @@
 }
 
 .drawerLink {
-  font-family: Roboto, sans-serif;
   font-size: 16px;
   font-weight: 400;
   color: #fcfcfc;
@@ -118,7 +119,6 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  font-family: Roboto, sans-serif;
   font-size: 16px;
   color: #fcfcfc;
   padding: 14px 8px;

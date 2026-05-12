@@ -1,147 +1,191 @@
+/* Frame 1171275851 — pad: 100/100/100/undefined gap:40 */
 .section {
   background-color: #fcfcfc;
-  padding: 80px 16px;
+  padding: 100px 100px;
+
+  @media (max-width: 1024px) {
+    padding: 80px 40px;
+  }
+
+  @media (max-width: 600px) {
+    padding: 60px 20px;
+  }
 }
 
+/* Inner content: max-width 1242, centered */
 .container {
   max-width: 1242px;
   margin: 0 auto;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 64px;
+  gap: 40px;
+}
 
-  @media (max-width: 960px) {
-    flex-direction: column;
-    gap: 48px;
+/* Text block: center-aligned — Figma w:805 */
+.textBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  max-width: 805px;
+  width: 100%;
+}
+
+/* Figma: 84px/500 Roboto color #272a2a lh:98 text-align CENTER */
+.heading {
+  font-size: clamp(40px, 6vw, 84px);
+  font-weight: 500;
+  color: #272a2a;
+  line-height: 98px;
+  text-align: center;
+  margin: 0;
+
+  @media (max-width: 768px) {
+    line-height: 1.2;
   }
 }
 
-/* Left column: text */
-.textCol {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-  max-width: 805px;
-}
-
-.heading {
-  font-family: Roboto, sans-serif;
-  font-size: clamp(42px, 6vw, 84px);
-  font-weight: 500;
-  color: #272a2a;
-  line-height: 1.1;
-  margin: 0;
-}
-
+/* Figma: 16px/400 color #5a6161 lh:28 text-align CENTER w:674 */
 .body {
-  font-family: Roboto, sans-serif;
   font-size: 16px;
   font-weight: 400;
   color: #5a6161;
-  line-height: 1.6;
-  max-width: 600px;
+  line-height: 28px;
+  text-align: center;
+  max-width: 674px;
   margin: 0;
 }
 
+/* Figma: Frame 1171275844 gap:16 horizontal center */
 .actions {
   display: flex;
   align-items: center;
   gap: 16px;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
+/* Primary — Figma: fills #becb2a stroke #becb2a radius:32 pad:16/24 gap:8 */
 .btnPrimary {
   display: inline-flex;
   align-items: center;
   gap: 8px;
   background-color: #becb2a;
+  border: 1px solid #becb2a;
   color: #0047bb;
-  font-family: Roboto, sans-serif;
   font-size: 16px;
   font-weight: 500;
-  padding: 16px 28px;
-  border-radius: 8px;
+  line-height: 28px;
+  padding: 16px 24px;
+  border-radius: 32px;
   text-decoration: none;
   white-space: nowrap;
   transition: opacity 0.2s;
 
-  &:hover {
-    opacity: 0.9;
-  }
+  &:hover { opacity: 0.9; }
 }
 
+/* Secondary — Figma: no fill, stroke rgba(211,213,213) radius:32 pad:16/24 */
 .btnSecondary {
   display: inline-flex;
   align-items: center;
   gap: 8px;
   background-color: transparent;
-  border: 2px solid #e0e0e0;
+  border: 1px solid rgba(211, 213, 213, 1);
   color: #272a2a;
-  font-family: Roboto, sans-serif;
   font-size: 16px;
   font-weight: 500;
-  padding: 14px 26px;
-  border-radius: 8px;
+  line-height: 28px;
+  padding: 16px 24px;
+  border-radius: 32px;
   text-decoration: none;
   white-space: nowrap;
   transition: border-color 0.2s;
 
-  &:hover {
-    border-color: #c0c0c0;
-  }
+  &:hover { border-color: #9a9a9a; }
 }
 
-/* Right column: membership cards */
+/* Membership cards row — Figma: Frame 1171275849 w:1242 h:593 */
 .cards {
-  position: relative;
   display: flex;
-  align-items: center;
   gap: 32px;
-  flex-shrink: 0;
+  align-items: flex-start;
+  width: 100%;
 
-  @media (max-width: 600px) {
+  @media (max-width: 900px) {
     flex-direction: column;
-    gap: 24px;
+    align-items: center;
   }
 }
 
-.cardBlue,
-.cardGreen {
-  width: 280px;
-  height: 320px;
-  border-radius: 24px;
-  padding: 24px;
+/* Blue card — Figma: fills #e4edff | IMAGE radius:32 w:529 h:563 */
+.cardBlue {
+  flex: 1;
+  max-width: 529px;
+  height: 563px;
+  border-radius: 32px;
+  background-color: #e4edff;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
-  gap: 16px;
   position: relative;
+
+  @media (max-width: 900px) {
+    width: 100%;
+    max-width: 100%;
+    height: 400px;
+  }
 }
 
-.cardBlue {
-  background: linear-gradient(135deg, #e4edff 0%, #d0e0ff 100%);
-}
-
+/* Green card — Figma: fills #f2f5d4 | IMAGE radius:32 w:552 h:581 */
 .cardGreen {
-  background: linear-gradient(135deg, #f2f5d4 0%, #e8ecba 100%);
+  flex: 1;
+  max-width: 552px;
+  height: 581px;
+  border-radius: 32px;
+  background-color: #f2f5d4;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  @media (max-width: 900px) {
+    width: 100%;
+    max-width: 100%;
+    height: 400px;
+  }
 }
 
+/* Pin illustration top area */
 .cardPin {
-  width: 60px;
-  height: 60px;
+  height: 40%;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 32px;
 }
 
-.pinShape {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
+.pinBlue {
+  width: 80px;
+  height: 100px;
+  background: linear-gradient(180deg, #a0bced 0%, #5b8ad6 40%, #2e68c9 100%);
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  clip-path: polygon(50% 100%, 0% 35%, 15% 0%, 85% 0%, 100% 35%);
 }
 
+.pinGreen {
+  width: 80px;
+  height: 100px;
+  background: linear-gradient(180deg, #ebefbf 0%, #becb2a 40%, #cdd555 100%);
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  clip-path: polygon(50% 100%, 0% 35%, 15% 0%, 85% 0%, 100% 35%);
+}
+
+/* Bottom image area */
 .cardImage {
   flex: 1;
-  border-radius: 16px;
-  background: #fff;
+  margin: 0 12px 12px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.5);
 }

@@ -1,152 +1,231 @@
+/* Hero — Figma: 1442×1024, blue #0047BB bg, Subtract vector mask bottom */
 .hero {
   position: relative;
   background-color: #0047bb;
-  min-height: 100vh;
+  height: 1024px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
+
+  @media (max-width: 768px) {
+    height: auto;
+    min-height: 100svh;
+  }
 }
 
-/* Wavy white mask at the bottom — matches Figma "Subtract" shape */
-.waveMask {
+/* The "Subtract" vector in Figma creates a wavy white cutout at the bottom */
+.subtract {
   position: absolute;
-  bottom: -2px;
+  bottom: 0;
   left: 0;
   right: 0;
-  height: 180px;
+  height: 200px;
   background: #fcfcfc;
-  clip-path: ellipse(60% 100% at 50% 100%);
+  clip-path: ellipse(55% 100% at 50% 100%);
   z-index: 1;
   pointer-events: none;
 }
 
+/* Figma container: x offset 97px from edge, w:1247, pad-top: 29px (1194-1165) */
 .container {
   position: relative;
   z-index: 2;
   max-width: 1247px;
-  margin: 0 auto;
-  padding: 120px 16px 200px;
-  display: flex;
-  flex-direction: column;
-  gap: 48px;
   width: 100%;
-}
-
-/* Title block */
-.titleBlock {
+  margin: 0 auto;
+  padding: 0 16px;
   display: flex;
   flex-direction: column;
-  gap: 0;
+  /* Figma: container gap 77px, starts at y=1194 (29px below hero top) */
+  gap: 77px;
+  flex: 1;
+  padding-bottom: 220px;
+
+  @media (max-width: 768px) {
+    gap: 40px;
+    padding-bottom: 100px;
+  }
 }
 
-.topRow {
+/* Main content row — Figma: gap:368 between title col and desc col */
+.mainRow {
+  display: flex;
+  gap: 80px;
+  align-items: flex-start;
+  flex: 1;
+  align-items: center;
+
+  @media (max-width: 960px) {
+    flex-direction: column;
+    gap: 32px;
+  }
+}
+
+/* Left title column — Figma w:612 */
+.titleCol {
+  display: flex;
+  flex-direction: column;
+  width: 612px;
+  flex-shrink: 0;
+
+  @media (max-width: 960px) {
+    width: 100%;
+  }
+}
+
+/* Title row 1: "Work" + "With" + profiles — Figma gap:32 */
+.titleRow {
   display: flex;
   align-items: center;
+  gap: 32px;
   flex-wrap: wrap;
-  gap: 24px;
 }
 
-.titleWord {
-  font-family: Roboto, sans-serif;
-  font-size: clamp(64px, 9vw, 120px);
+/* "Work" and "With" — Figma: 120px/700 color: #fcfcfc lh:140.625 */
+.word {
+  font-size: clamp(60px, 9vw, 120px);
   font-weight: 700;
   color: #fcfcfc;
-  line-height: 1;
+  line-height: 1.171875;
   margin: 0;
 }
 
-/* Profile bubbles */
+/* Profile bubbles container — Figma: w:171 h:71 with overlapping ellipses */
 .profiles {
   display: flex;
   align-items: center;
-  margin-left: 8px;
+  flex-shrink: 0;
 }
 
+/* Figma ellipses: Ellipse19=90x90 #d9d9d9, Ellipse20=71x71 #d3a5e5 stroke #fff,
+   Ellipse21=71x71 #becb2a stroke #fff — overlapping via negative margin */
 .bubble {
-  display: block;
-  width: 70px;
-  height: 70px;
   border-radius: 50%;
-  border: 3px solid #0047bb;
-  margin-left: -16px;
+  border: 2px solid #ffffff;
   flex-shrink: 0;
 
+  &:not(:first-child) {
+    margin-left: -20px;
+  }
+
   &:first-child {
-    margin-left: 0;
+    width: 90px;
+    height: 90px;
+    background: #d9d9d9;
+    border-color: #0047bb;
+    z-index: 0;
+  }
+
+  &:nth-child(2) {
+    width: 71px;
+    height: 71px;
+    background: #d3a5e5;
+    z-index: 1;
+  }
+
+  &:nth-child(3) {
+    width: 71px;
+    height: 71px;
+    background: #becb2a;
+    z-index: 2;
   }
 
   @media (max-width: 768px) {
-    width: 48px;
-    height: 48px;
+    &:first-child { width: 56px; height: 56px; }
+    &:nth-child(2), &:nth-child(3) { width: 44px; height: 44px; }
   }
 }
 
-/* Bottom row: description + CTA */
-.bottomRow {
+/* "Profile details" bubble overlay — Figma: white bg, blue stroke, radius:70 */
+.profileCard {
+  background: #cdddf8;
+  border: 1.5px solid #0047bb;
+  border-radius: 70px;
+  padding: 8px;
   display: flex;
-  align-items: flex-start;
-  gap: 48px;
-  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 3px;
+  margin-left: -24px;
+  z-index: 3;
+  flex-shrink: 0;
+}
 
-  @media (max-width: 768px) {
-    flex-direction: column;
-    gap: 24px;
+.profileLine {
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.5);
+  height: 2px;
+
+  &:nth-child(1) { width: 47px; }
+  &:nth-child(2) { width: 30px; }
+  &:nth-child(3) { width: 20px; }
+}
+
+/* "Energy" — same style, sits below the row */
+/* Right description column — Figma: w:303, gap:16 */
+.descCol {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 303px;
+  flex-shrink: 0;
+
+  @media (max-width: 960px) {
+    width: 100%;
+    max-width: 400px;
   }
 }
 
-.desc {
-  font-family: Roboto, sans-serif;
+.descText {
   font-size: 16px;
   font-weight: 400;
+  line-height: 28px;
   color: #fcfcfc;
-  line-height: 1.6;
-  max-width: 320px;
   margin: 0;
 }
 
-.ctaGroup {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  flex-shrink: 0;
-}
-
-/* Yellow-green primary button from Figma */
+/* "Explore OZ" button — Figma: fills #becb2a stroke #becb2a radius:32 pad:16/24 gap:8 */
 .btnPrimary {
   display: inline-flex;
   align-items: center;
   gap: 8px;
   background-color: #becb2a;
+  border: 1px solid #becb2a;
   color: #0047bb;
-  font-family: Roboto, sans-serif;
   font-size: 16px;
   font-weight: 500;
-  padding: 14px 24px;
-  border-radius: 8px;
+  line-height: 28px;
+  padding: 12px 24px;
+  border-radius: 32px;
   text-decoration: none;
+  align-self: flex-start;
   transition: opacity 0.2s;
-  white-space: nowrap;
 
   &:hover {
     opacity: 0.9;
   }
 }
 
-/* Small circle arrow button (secondary) */
-.btnArrow {
-  display: inline-flex;
+/* Bottom scroll circle — Figma: 100x100 fills #f6f6f6 radius:171 (fully round) */
+.scrollCircle {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: #f6f6f6;
+  display: flex;
   align-items: center;
   justify-content: center;
-  width: 52px;
-  height: 52px;
-  border-radius: 50%;
-  background-color: rgba(252, 252, 252, 0.15);
-  color: #fcfcfc;
+  align-self: center;
+  flex-shrink: 0;
+  margin-top: auto;
+  cursor: pointer;
   border: none;
-  text-decoration: none;
-  transition: background-color 0.2s;
+  position: absolute;
+  bottom: 180px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
 
-  &:hover {
-    background-color: rgba(252, 252, 252, 0.25);
+  @media (max-width: 768px) {
+    display: none;
   }
 }

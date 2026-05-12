@@ -1,6 +1,15 @@
+/* Frame 1171275833 — pad:100 gap:28 center-aligned */
 .section {
   background-color: #fcfcfc;
-  padding: 80px 16px;
+  padding: 100px;
+
+  @media (max-width: 1024px) {
+    padding: 80px 40px;
+  }
+
+  @media (max-width: 600px) {
+    padding: 60px 20px;
+  }
 }
 
 .container {
@@ -8,134 +17,165 @@
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 48px;
+  align-items: center;
+  gap: 28px;
 }
 
+/* Figma: Frame 1171275829 w:805 h:254 gap:24 center */
 .textBlock {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 24px;
   max-width: 805px;
+  width: 100%;
 }
 
+/* Figma: 84px/500 #272a2a lh:98 CENTER */
 .heading {
-  font-family: Roboto, sans-serif;
-  font-size: clamp(42px, 6vw, 84px);
+  font-size: clamp(40px, 6vw, 84px);
   font-weight: 500;
   color: #272a2a;
-  line-height: 1.1;
+  line-height: 98px;
+  text-align: center;
   margin: 0;
+
+  @media (max-width: 768px) {
+    line-height: 1.2;
+  }
 }
 
+/* Figma: 16px/400 #5a6161 lh:28 w:674 CENTER */
 .body {
-  font-family: Roboto, sans-serif;
   font-size: 16px;
   font-weight: 400;
   color: #5a6161;
-  line-height: 1.6;
-  max-width: 620px;
+  line-height: 28px;
+  text-align: center;
+  max-width: 674px;
   margin: 0;
 }
 
+/* Figma: Frame 1171275841 gap:16 horizontal */
 .actions {
   display: flex;
   align-items: center;
   gap: 16px;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
+/* Primary — #becb2a radius:32 h:52 */
 .btnPrimary {
   display: inline-flex;
   align-items: center;
   gap: 8px;
   background-color: #becb2a;
+  border: 1px solid #becb2a;
   color: #0047bb;
-  font-family: Roboto, sans-serif;
   font-size: 16px;
   font-weight: 500;
-  padding: 14px 24px;
-  border-radius: 8px;
+  line-height: 28px;
+  padding: 12px 24px;
+  border-radius: 32px;
   text-decoration: none;
   white-space: nowrap;
   transition: opacity 0.2s;
 
-  &:hover {
-    opacity: 0.9;
-  }
+  &:hover { opacity: 0.9; }
 }
 
+/* Secondary — stroke rgba(211,213,213) radius:32 */
 .btnSecondary {
   display: inline-flex;
   align-items: center;
   gap: 8px;
   background-color: transparent;
-  border: 2px solid #e0e0e0;
+  border: 1px solid rgba(211, 213, 213, 1);
   color: #272a2a;
-  font-family: Roboto, sans-serif;
   font-size: 16px;
   font-weight: 500;
-  padding: 12px 22px;
-  border-radius: 8px;
+  line-height: 28px;
+  padding: 12px 24px;
+  border-radius: 32px;
   text-decoration: none;
   white-space: nowrap;
   transition: border-color 0.2s;
 
-  &:hover {
-    border-color: #c0c0c0;
-  }
+  &:hover { border-color: #9a9a9a; }
 }
 
-/* Gallery */
+/* Gallery — Figma: Frame 1171275831 w:1242 h:511 gap:16 vertical center */
 .gallery {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
 }
 
-.galleryTrack {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+/* Figma: Frame 1171275828 — 5 rects horizontal gap:16 h:443 */
+.galleryRow {
+  display: flex;
+  align-items: center;
   gap: 16px;
+  width: 100%;
   height: 443px;
 
   @media (max-width: 900px) {
-    grid-template-columns: repeat(2, 1fr);
-    height: auto;
+    height: 320px;
   }
 
-  @media (max-width: 480px) {
-    grid-template-columns: 1fr;
+  @media (max-width: 600px) {
+    height: 220px;
+    gap: 8px;
   }
 }
 
-.galleryItem {
-  border-radius: 16px;
-  transition: transform 0.2s;
+/* Individual gallery images — heights from Figma:
+   R32=254x443, R30=206x388, R4=253x329, R30b=206x388, R32b=254x443 */
+.img {
+  border-radius: 27px;
+  background: #d9d9d9;
+  flex-shrink: 0;
 }
 
-.galleryItemActive {
-  transform: scale(1.02);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+.img1, .img5 { width: 254px; height: 443px; border-radius: 27px; }
+.img2, .img4 { width: 206px; height: 388px; border-radius: 24px; }
+.img3       { width: 253px; height: 329px; border-radius: 29px; }
+
+@media (max-width: 900px) {
+  .img1, .img5 { width: 20%; height: 320px; }
+  .img2, .img4 { width: 18%; height: 270px; }
+  .img3       { width: 24%; height: 230px; }
 }
 
-.galleryControls {
+@media (max-width: 600px) {
+  .img1, .img5 { width: 20%; height: 220px; }
+  .img2, .img4 { width: 18%; height: 180px; }
+  .img3       { width: 24%; height: 160px; }
+}
+
+/* Figma: Frame 1171275830 — nav row gap:8, two 52x52 circle buttons */
+.navRow {
   display: flex;
-  gap: 12px;
-  align-self: flex-end;
+  align-items: center;
+  gap: 8px;
 }
 
+/* Both nav btns — Figma: stroke rgba(211,213,213) radius:32 h:52 w:52 */
 .arrowBtn {
   width: 52px;
   height: 52px;
-  border-radius: 50%;
-  border: 2px solid #e0e0e0;
-  background: #fcfcfc;
+  border-radius: 32px;
+  border: 1px solid rgba(211, 213, 213, 1);
+  background: transparent;
   color: #272a2a;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: border-color 0.2s, background 0.2s;
+  transition: border-color 0.2s, color 0.2s;
 
   &:hover {
     border-color: #0047bb;
