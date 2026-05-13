@@ -1,0 +1,121 @@
+.section {
+  position: relative;
+  width: 100%;
+  padding: 80px 100px 120px;
+  z-index: 2;
+
+  @media (max-width: 1024px) {
+    padding: 60px 24px 80px;
+  }
+
+  @media (max-width: 640px) {
+    padding: 48px 20px 60px;
+  }
+}
+
+.container {
+  max-width: 1242px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+
+  @media (max-width: 1024px) {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 540px;
+}
+
+.heading {
+  font-family: var(--font-sans);
+  font-size: 84px;
+  font-weight: 500;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: var(--color-oz-text-dark);
+  margin: 0;
+  text-balance: balance;
+
+  @media (max-width: 1024px) {
+    font-size: 56px;
+  }
+
+  @media (max-width: 640px) {
+    font-size: 42px;
+  }
+}
+
+.body {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--color-oz-text-muted, #555);
+  margin: 0;
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding-top: 32px;
+
+  @media (max-width: 1024px) {
+    padding-top: 0;
+  }
+}
+
+.bulletItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 18px 24px;
+  background: var(--color-oz-page-bg);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 20px;
+}
+
+.bulletIcon {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  background: var(--color-oz-yellow);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2px;
+}
+
+.bulletText {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+
+.bulletTitle {
+  font-family: var(--font-sans);
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.3;
+  color: var(--color-oz-text-dark);
+  margin: 0;
+}
+
+.bulletBody {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--color-oz-text-muted, #555);
+  margin: 0;
+}

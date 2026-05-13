@@ -11,19 +11,19 @@ const CARDS: Card[] = [
   {
     tone: "blue",
     pinColors: { outer: "#A0BCEB", inner: "#5B8AD6", accent: "#2E68C9" },
-    image: "/space-hero-blue.jpg",
+    image: "/spaces-hero-card-1.jpg",
     className: "cardBlue",
   },
   {
     tone: "purple",
     pinColors: { outer: "#E5C9EF", inner: "#D3A5E5", accent: "#B588C6" },
-    image: "/space-hero-purple.jpg",
+    image: "/spaces-hero-card-2.jpg",
     className: "cardPurple",
   },
   {
     tone: "green",
     pinColors: { outer: "#EBEFBF", inner: "#BECB2A", accent: "#CBD555" },
-    image: "/space-hero-green.jpg",
+    image: "/spaces-hero-card-3.jpg",
     className: "cardGreen",
   },
 ];

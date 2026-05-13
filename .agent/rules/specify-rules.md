@@ -46,4 +46,6 @@ TypeScript: Follow standard conventions
 - N/A — static marketing page, no persistence (008-oz-a-page)
 - TypeScript 5, React 19, Next.js 16 + TailwindCSS v4, SCSS modules, lucide-react (CheckCircle2/ArrowRight/ArrowUpRight), inline SVG for cross-star and dashed connectors (009-ecosystem-page)
 - N/A — static marketing page, no persistence (009-ecosystem-page)
+- TypeScript 5, React 19, Next.js 16 + TailwindCSS v4, SCSS modules, lucide-react (ArrowUpRight/Check), CSS transforms (rotate) for tilted card stack, fixed-position decorative shapes (010-spaces-access-page)
+- N/A — static marketing page, no persistence (010-spaces-access-page)
 <!-- MANUAL ADDITIONS END -->

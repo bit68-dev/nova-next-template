@@ -1,0 +1,167 @@
+.section {
+  position: relative;
+  width: 100%;
+  padding: 80px 100px;
+  z-index: 2;
+
+  @media (max-width: 1024px) {
+    padding: 60px 24px;
+  }
+
+  @media (max-width: 640px) {
+    padding: 48px 20px;
+  }
+}
+
+.container {
+  max-width: 1242px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+
+  @media (max-width: 1024px) {
+    gap: 40px;
+  }
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 760px;
+}
+
+.heading {
+  font-family: var(--font-sans);
+  font-size: 84px;
+  font-weight: 500;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: var(--color-oz-text-dark);
+  margin: 0;
+  text-balance: balance;
+
+  @media (max-width: 1024px) {
+    font-size: 56px;
+  }
+
+  @media (max-width: 640px) {
+    font-size: 42px;
+  }
+}
+
+.body {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--color-oz-text-muted, #555);
+  margin: 0;
+  max-width: 640px;
+}
+
+/* Cards row — 4 cards, gap 22.14 (figma) */
+.cardsRow {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22.14px;
+
+  @media (max-width: 1024px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  @media (max-width: 640px) {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+/* Pill card — 277x260 r:250 (per ecosystem reference) */
+.card {
+  position: relative;
+  aspect-ratio: 277 / 260;
+  border-radius: 250px;
+  padding: 28px 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.cardBlue {
+  background: var(--color-oz-blue);
+  color: var(--color-oz-page-bg);
+}
+
+.cardPink {
+  background: var(--color-oz-pink);
+  color: var(--color-oz-page-bg);
+}
+
+.cardYellow {
+  background: var(--color-oz-yellow);
+  color: var(--color-oz-text-dark);
+}
+
+.cardPurple {
+  background: var(--color-oz-purple);
+  color: var(--color-oz-text-dark);
+}
+
+.cardLabel {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  opacity: 0.85;
+}
+
+.cardTitle {
+  font-family: var(--font-sans);
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+
+.cardBody {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  margin: 0;
+  opacity: 0.9;
+}
+
+.cardTop {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.cardBottom {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.cardArrow {
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.2);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(4px);
+
+  .cardYellow &,
+  .cardPurple & {
+    background: rgba(0, 0, 0, 0.08);
+  }
+}
